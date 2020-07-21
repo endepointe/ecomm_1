@@ -1,0 +1,81 @@
+@media(max-width: 280px) {
+  .H1 {
+    font-size: 0.8rem;
+    flex: 1;
+  }
+}
+@media(min-width: 280px) {
+  .Nav {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .MenuBtn {
+    margin-left: 0.2rem;
+    flex: 0 0 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  .MenuBtn:hover {
+    cursor: pointer;
+  }
+
+  .MenuIcon,
+  .CartIcon,
+  .AccountIcon {
+    flex: 1;
+    margin: auto; 
+  }
+
+  .H1 {
+    flex: 2;
+    font-size: 1.4rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .Ul {
+    flex: 0 0 5rem;
+    display: flex;
+    margin: 0;
+  }
+
+  .UlLi {
+    flex: 1;
+    margin: auto 0.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .CartBtn,
+  .AccountBtn {
+    margin-right: 0.2rem;
+    flex: 0 0 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  .CartBtn:hover,
+  .AccountBtn:hover {
+    cursor: pointer;
+  }
+}
+
+@media(min-width: 375px) {
+  .H1 {
+    font-size: 1.6rem;
+  }
+}
