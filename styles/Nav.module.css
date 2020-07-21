@@ -40,6 +40,7 @@
     font-size: 1.4rem;
     margin: 0 auto;
     text-align: center;
+    color: var(--shopnow-btn-color);
   }
 
   .Ul {
@@ -71,6 +72,18 @@
   .CartBtn:hover,
   .AccountBtn:hover {
     cursor: pointer;
+  }
+
+  .HiddenMenu {
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 40%;
+    max-width: 260px; 
+    height: 100vh;
+    background-color: grey;
+    z-index: 10;
+    position: absolute;
   }
 }
 
