@@ -18,16 +18,12 @@
   }
 
   .FourSquareImgRow:nth-child(1) .FourSquareImgDiv:nth-child(1) {
-    background-color: green;
   }
   .FourSquareImgRow:nth-child(1) .FourSquareImgDiv:nth-child(2) {
-    background-color: blue;
   }
   .FourSquareImgRow:nth-child(2) .FourSquareImgDiv:nth-child(1) {
-    background-color: black;
   }
   .FourSquareImgRow:nth-child(2) .FourSquareImgDiv:nth-child(2) {
-    background-color: red;
   }
 
 }
