@@ -10,6 +10,9 @@
     margin: 0;
     display: flex;
     align-items: center;
+    position: fixed;
+    background-color: white;
+    z-index: 30;
   }
 
   .MenuBtn {

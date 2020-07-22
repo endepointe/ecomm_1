@@ -14,7 +14,7 @@ display: flex;
   z-index: 20;
   transition: transform 0.3s ease-in-out;
   
-  @media (max-width: 476px) {
+  @media (max-width: 676px) {
     width: 100%;
   }
 
@@ -28,7 +28,7 @@ display: flex;
     text-decoration: none;
     transition: color 0.3s linear;
     
-    @media (max-width: 476px) {
+    @media (max-width: 676px) {
       font-size: 1.5rem;
       text-align: center;
     }
