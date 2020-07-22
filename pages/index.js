@@ -6,7 +6,8 @@ import { bool, number, string } from 'prop-types';
 // Hooks
 import {
   useOnClickOutside,
-  useWindowSize,
+  useWindowSizeX,
+  useWindowSizeY,
   ShowWindowDimensions,
 } from '../hooks/hooks';
 //
@@ -24,7 +25,7 @@ import Link from 'next/link';
 //
 // React
 import {
-  useLayoutEffect,
+  // useLayoutEffect,
   useEffect,
   useState,
   useRef
@@ -34,24 +35,15 @@ import {
 export default function Home() {
   const node = useRef();
   const [open, setOpen] = useState(false);
-  // const [dy, setWidth] = useState(0);
-  // const [dx, setHeight] = useState(0);
+  const [dy, setWidth] = useState(useWindowSizeY());
+  const [dx, setHeight] = useState(useWindowSizeX());
 
-  const xy = useWindowSize();
+  console.log(dy, dx);
 
-  // useLayoutEffect(() => {
-  //   console.log(window.innerWidth);
-  //   setWidth(window.innerWidth / 2);
-  //   setHeight(window.innerWidth / 2);
-  // });
-
-  const adjustDimensions = () => {
-    console.log('its listening');
-    let xy = useWindowSize();
-    setWidth(xy[0] / 2);
-    setHeight(xy[1] / 2);
-    console.log(xy[0], xy[1]);
-  }
+  useEffect(() => {
+    setWidth(window.innerWidth / 2);
+    setHeight(window.innerWidth / 2);
+  });
 
   useOnClickOutside(node, () => setOpen(false));
   const toggleMenu = () => {
@@ -123,25 +115,25 @@ export default function Home() {
             <div className={prodSecOneStyles.FourSquareImgRow}>
               <Square
                 className={prodSecOneStyles.FourSquareImgDiv}
-                w={xy[0] / 2} h={xy[1] / 2} />
+                w={dx} h={dy} />
               <Square
                 className={prodSecOneStyles.FourSquareImgDiv}
-                w={xy[0] / 2} h={xy[1] / 2} />
+                w={dx} h={dy} />
             </div>
             <div className={prodSecOneStyles.FourSquareImgRow}>
               <Square
                 className={prodSecOneStyles.FourSquareImgDiv}
-                w={xy[0] / 2} h={xy[1] / 2} />
+                w={dx} h={dy} />
               <Square
                 className={prodSecOneStyles.FourSquareImgDiv}
-                w={xy[0] / 2} h={xy[1] / 2} />
-            </div
+                w={dx} h={dy} />
+            </div>
           </section>
 
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error modi nostrum natus explicabo quo. Aliquid sit, dolores animi, tempora molestiae fugiat perferendis, iste eveniet ducimus consectetur vitae consequuntur saepe enim.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ullam voluptatum, at libero necessitatibus, distinctio suscipit dolorem repellendus pariatur tenetur enim. Quam est doloribus provident deleniti. Eum ea voluptatem voluptates.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error modi nostrum natus explicabo quo. Aliquid sit, dolores animi, tempora molestiae fugiat perferendis, iste eveniet ducimus consectetur vitae consequuntur saepe enim.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ullam voluptatum, at libero necessitatibus, distinctio suscipit dolorem repellendus pariatur tenetur enim. Quam est doloribus provident deleniti. Eum ea voluptatem voluptates.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ullam voluptatum, at libero necessitatibus, distinctio suscipit dolorem repellendus pariatur tenetur enim. Quam est doloribus provident deleniti. Eum ea voluptatem voluptates.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error modi nostrum natus explicabo quo. Aliquid sit, dolores animi, tempora molestiae fugiat perferendis, iste eveniet ducimus consectetur vitae consequuntur saepe enim.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ullam voluptatum, at libero necessitatibus, distinctio suscipit dolorem repellendus pariatur tenetur enim. Quam est doloribus provident deleniti. Eum ea voluptatem voluptates.</p>
         </article>
       </main>
     </div>
@@ -149,14 +141,14 @@ export default function Home() {
 }
 
 Burger.propTypes = {
-        open: bool.isRequired,
+  open: bool.isRequired,
 }
 
 SideMenu.propTypes = {
-        open: bool.isRequired,
+  open: bool.isRequired,
 }
 
 Square.propTypes = {
-        // width: string.isRequired,
-        // height: string.isRequired,
-      }
+  // width: string.isRequired,
+  // height: string.isRequired,
+}
