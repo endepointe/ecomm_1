@@ -39,7 +39,7 @@ export const useOnClickOutside = (ref, handler) => {
 // Refactored for my use
 export const useWindowSizeX = () => {
   const [size, setSize] = useState(0);
-  useLayoutEffect(() => {
+  useEffect(() => {
     function updateSize() {
       setSize(window.innerWidth / 2);
     }
@@ -52,7 +52,7 @@ export const useWindowSizeX = () => {
 
 export const useWindowSizeY = () => {
   const [size, setSize] = useState(0);
-  useLayoutEffect(() => {
+  useEffect(() => {
     function updateSize() {
       setSize(window.innerWidth / 2);
     }
