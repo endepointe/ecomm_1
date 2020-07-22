@@ -33,10 +33,18 @@
   }
 
   .ShopNowBtn {
-    padding: 0 1rem 0.2rem 1rem;
-    border: 1px solid var(--shopnow-btn-color);
+    padding: 0 1rem 0.1rem 1rem;
+    border: 1px solid white;
     background: none;
+    background-color: none;
     outline: none;
     color: var(--shopnow-btn-color);
+  }
+
+  .ShopNowBtn:hover {
+    background-color: #ababab;
+    transition: background-color 0.3s linear;
+    color: white;
+    cursor: pointer;
   }
 }
