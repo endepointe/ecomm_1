@@ -1,0 +1,9 @@
+
+@media(min-width: 280px) {
+  .Article {
+    flex: 0 0 auto;
+    color: black;
+    background-color: #CCC;
+  }
+
+}

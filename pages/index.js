@@ -2,6 +2,8 @@ import navStyles from '../styles/Nav.module.css';
 import headerStyles from '../styles/Header.module.css';
 import mainStyles from '../styles/Main.module.css';
 import prodSecOneStyles from '../styles/ProdSecOne.module.css';
+import prodSecTwoStyles from '../styles/ProdSecTwo.module.css';
+//
 import { bool, number, string } from 'prop-types';
 // Hooks
 import {
@@ -38,7 +40,7 @@ export default function Home() {
   const [dy, setWidth] = useState(useWindowSizeY());
   const [dx, setHeight] = useState(useWindowSizeX());
 
-  console.log(dy, dx);
+  // console.log(dy, dx);
 
   useEffect(() => {
     setWidth(window.innerWidth / 2);
@@ -129,11 +131,11 @@ export default function Home() {
                 w={dx} h={dy} />
             </div>
           </section>
-
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error modi nostrum natus explicabo quo. Aliquid sit, dolores animi, tempora molestiae fugiat perferendis, iste eveniet ducimus consectetur vitae consequuntur saepe enim.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ullam voluptatum, at libero necessitatibus, distinctio suscipit dolorem repellendus pariatur tenetur enim. Quam est doloribus provident deleniti. Eum ea voluptatem voluptates.</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error modi nostrum natus explicabo quo. Aliquid sit, dolores animi, tempora molestiae fugiat perferendis, iste eveniet ducimus consectetur vitae consequuntur saepe enim.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ullam voluptatum, at libero necessitatibus, distinctio suscipit dolorem repellendus pariatur tenetur enim. Quam est doloribus provident deleniti. Eum ea voluptatem voluptates.</p>
+        </article>
+        <br />
+        <br />
+        <article className={prodSecTwoStyles.Article}>
+          prodSecTwo
         </article>
       </main>
     </div>
