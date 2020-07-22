@@ -6,4 +6,14 @@
     background-color: #CCC;
   }
 
+  .H1 {
+    width: 100%;
+    height: 3rem;
+  }
+
+  .ProdCarousel {
+    width: 100%;
+    height: 100%;
+  }
+
 }

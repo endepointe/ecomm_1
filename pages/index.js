@@ -111,8 +111,10 @@ export default function Home() {
 
       <main className={mainStyles.Main}>
         <article className={prodSecOneStyles.Article}>
-          <h1>Grab you customer's attention here.</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nihil adipisci dicta ex temporibus dolores consectetur impedit natus nobis! Optio, cum dolorum animi sapiente sequi sint explicabo nostrum dolore similique.</p>
+          <div className={prodSecOneStyles.DescDiv}>
+            <h1 className={prodSecOneStyles.H1}>Grab you customer's attention here.</h1>
+            <p className={prodSecOneStyles.P}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nihil adipisci dicta ex temporibus dolores consectetur impedit natus nobis! Optio, cum dolorum animi sapiente sequi sint explicabo nostrum dolore similique.</p>
+          </div>
           <section className={prodSecOneStyles.FourSquareImgs}>
             <div className={prodSecOneStyles.FourSquareImgRow}>
               <Square
@@ -135,7 +137,10 @@ export default function Home() {
         <br />
         <br />
         <article className={prodSecTwoStyles.Article}>
-          prodSecTwo
+          <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
+          <section className={prodSecTwoStyles.ProdCarousel}>
+            Carousel
+          </section>
         </article>
       </main>
     </div>
