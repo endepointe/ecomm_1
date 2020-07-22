@@ -112,7 +112,7 @@ export default function Home() {
       <main className={mainStyles.Main}>
         <article className={prodSecOneStyles.Article}>
           <div className={prodSecOneStyles.DescDiv}>
-            <h1 className={prodSecOneStyles.H1}>Grab you customer's attention here.</h1>
+            <h1 className={prodSecOneStyles.H1}>Grab your customer's attention here.</h1>
             <p className={prodSecOneStyles.P}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nihil adipisci dicta ex temporibus dolores consectetur impedit natus nobis! Optio, cum dolorum animi sapiente sequi sint explicabo nostrum dolore similique.</p>
           </div>
           <section className={prodSecOneStyles.FourSquareImgs}>
