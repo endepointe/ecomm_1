@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SideMenu = styled.nav`
-display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   background: #CCC;

@@ -120,28 +120,24 @@ export default function Home() {
               <Square
                 className={prodSecOneStyles.FourSquareImgDiv}
                 w={dx} h={dy}>
-                <div
-                  className={prodSecOneStyles.SquareOverlay}></div>
+                <div className={prodSecOneStyles.SquareOverlay}></div>
               </Square>
               <Square
                 className={prodSecOneStyles.FourSquareImgDiv}
                 w={dx} h={dy}>
-                <div
-                  className={prodSecOneStyles.SquareOverlay}></div>
+                <div className={prodSecOneStyles.SquareOverlay}></div>
               </Square>
             </div>
             <div className={prodSecOneStyles.FourSquareImgRow}>
               <Square
                 className={prodSecOneStyles.FourSquareImgDiv}
                 w={dx} h={dy}>
-                <div
-                  className={prodSecOneStyles.SquareOverlay}></div>
+                <div className={prodSecOneStyles.SquareOverlay}></div>
               </Square>
               <Square
                 className={prodSecOneStyles.FourSquareImgDiv}
                 w={dx} h={dy}>
-                <div
-                  className={prodSecOneStyles.SquareOverlay}></div>
+                <div className={prodSecOneStyles.SquareOverlay}></div>
               </Square>
             </div>
           </section>
