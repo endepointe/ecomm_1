@@ -3,6 +3,8 @@ import headerStyles from '../styles/Header.module.css';
 import mainStyles from '../styles/Main.module.css';
 import prodSecOneStyles from '../styles/ProdSecOne.module.css';
 import prodSecTwoStyles from '../styles/ProdSecTwo.module.css';
+// Temp Icon for footer
+import FavoriteIcon from '@material-ui/icons/Favorite';
 //
 import { bool, number, string } from 'prop-types';
 // Hooks
@@ -147,9 +149,11 @@ export default function Home() {
         <article className={prodSecTwoStyles.Article}>
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
           <section className={prodSecTwoStyles.ProdCarousel}>
-            Carousel
+            {'Carousel on hold, learning WordPress for you'}
           </section>
+          <p>Built with <FavoriteIcon fontSize="small" /> using NextJS.</p>
         </article>
+
       </main>
     </div>
   )
