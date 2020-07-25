@@ -13,9 +13,29 @@
     text-align: center;
   }
 
-  .ProdCarousel {
+  .ProdCarouselSec {
     width: 100%;
-    height: 100%;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .Carousel {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .CarouselBtn {
+    height: 4rem;
+    align-self: center;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  .CarouselBtn:hover {
+    cursor: pointer;
   }
 
 }

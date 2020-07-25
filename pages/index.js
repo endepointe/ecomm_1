@@ -5,6 +5,9 @@ import prodSecOneStyles from '../styles/ProdSecOne.module.css';
 import prodSecTwoStyles from '../styles/ProdSecTwo.module.css';
 // Temp Icon for footer
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import StarIcon from '@material-ui/icons/Star';
 //
 import { bool, number, string } from 'prop-types';
 // Hooks
@@ -148,8 +151,54 @@ export default function Home() {
         <br />
         <article className={prodSecTwoStyles.Article}>
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
-          <section className={prodSecTwoStyles.ProdCarousel}>
-            {'Carousel on hold, learning WordPress for you'}
+          <section className={prodSecTwoStyles.ProdCarouselSec}>
+            {/* {'Carousel on hold, learning WordPress for you'} */}
+            <div className={prodSecTwoStyles.Carousel}>
+
+              <button
+                className={prodSecTwoStyles.CarouselBtn}
+                aria-label="product carousel left">
+                <ChevronLeftIcon />
+              </button>
+
+              <div>
+                <img src="https://via.placeholder.com/150X300" />
+                <h4>product name</h4>
+                <p>Category type</p>
+                <p>price</p>
+                <div>
+                  <span>
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                  </span>
+                </div>
+              </div>
+              <div>
+                <img src="https://via.placeholder.com/150X300" />
+                <h4>product name</h4>
+                <p>Category type</p>
+                <p>price</p>
+                <div>
+                  <span>
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                  </span>
+                </div>
+              </div>
+
+              <button
+                className={prodSecTwoStyles.CarouselBtn}
+                aria-label="product carousel right">
+                <ChevronRightIcon />
+              </button>
+
+            </div>
           </section>
           <p>Built with <FavoriteIcon fontSize="small" /> using NextJS.</p>
         </article>
