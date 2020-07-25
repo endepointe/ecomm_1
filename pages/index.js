@@ -1,13 +1,13 @@
+import db from '../db/pgp/pgp';
 import navStyles from '../styles/Nav.module.css';
 import headerStyles from '../styles/Header.module.css';
 import mainStyles from '../styles/Main.module.css';
 import prodSecOneStyles from '../styles/ProdSecOne.module.css';
 import prodSecTwoStyles from '../styles/ProdSecTwo.module.css';
+
 // Temp Icon for footer
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import StarIcon from '@material-ui/icons/Star';
+
 //
 import { bool, number, string } from 'prop-types';
 // Hooks
@@ -26,6 +26,9 @@ import Burger from '../components/Burger';
 import SideMenu from '../components/SideMenu';
 import Square from '../components/Square';
 //
+// React Components
+import Carousel from '../components/Carousel';
+//
 // NextJS
 import Head from 'next/head';
 import Link from 'next/link';
@@ -39,7 +42,8 @@ import {
 } from 'react';
 //
 
-export default function Home() {
+export default function Home({ products }) {
+
   const node = useRef();
   const [open, setOpen] = useState(false);
   const [dy, setWidth] = useState(useWindowSizeY());
@@ -153,53 +157,7 @@ export default function Home() {
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
           {'Carousel in dev while learning WP for you'}
           <section className={prodSecTwoStyles.ProdCarouselSec}>
-
-            <div className={prodSecTwoStyles.Carousel}>
-
-              <button
-                className={prodSecTwoStyles.CarouselBtn}
-                aria-label="product carousel left">
-                <ChevronLeftIcon />
-              </button>
-
-              <div>
-                <img src="https://via.placeholder.com/150X300" />
-                <h4>product name</h4>
-                <p>Category type</p>
-                <p>price</p>
-                <div>
-                  <span>
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                  </span>
-                </div>
-              </div>
-              <div>
-                <img src="https://via.placeholder.com/150X300" />
-                <h4>product name</h4>
-                <p>Category type</p>
-                <p>price</p>
-                <div>
-                  <span>
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                  </span>
-                </div>
-              </div>
-
-              <button
-                className={prodSecTwoStyles.CarouselBtn}
-                aria-label="product carousel right">
-                <ChevronRightIcon />
-              </button>
-
-            </div>
+            <Carousel products={products} />
           </section>
           <p>Built with <FavoriteIcon fontSize="small" /> using NextJS.</p>
         </article>
@@ -220,4 +178,15 @@ SideMenu.propTypes = {
 Square.propTypes = {
   // width: string.isRequired,
   // height: string.isRequired,
+}
+
+export async function getStaticProps() {
+
+  const inventory = await db.manyOrNone('SELECT * FROM products;');
+
+  return {
+    props: {
+      products: inventory,
+    }
+  }
 }
