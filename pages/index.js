@@ -151,8 +151,9 @@ export default function Home() {
         <br />
         <article className={prodSecTwoStyles.Article}>
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
+          {'Carousel in dev while learning WP for you'}
           <section className={prodSecTwoStyles.ProdCarouselSec}>
-            {'Carousel in dev while learning WP for you'}
+
             <div className={prodSecTwoStyles.Carousel}>
 
               <button
