@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const initOptions = {
   connect(client, dc, useCount) {
     const cp = client.connectionParameters;
@@ -17,7 +15,7 @@ const pgp = require('pg-promise')(initOptions);
 const cn = {
   host: 'localhost',
   port: 5432,
-  database: 'clerk',
+  database: 'ec1',
   user: process.env.PSQLUSER,
   password: process.env.PSQLPASS,
   max: 2
