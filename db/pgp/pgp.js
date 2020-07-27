@@ -1,16 +1,16 @@
 const initOptions = {
-  connect(client, dc, useCount) {
-    const cp = client.connectionParameters;
-    console.log('Connected to db: ' + cp.database);
-    console.log('CP: ' + cp);
-  },
-  disconnect(client, dc) {
-    const cp = client.connectionParameters;
-    console.log('Disconnecting from db: ' + cp.database);
-  }
+  // connect(client, dc, useCount) {
+  //   const cp = client.connectionParameters;
+  //   // console.log('Connected to db: ' + cp.database);
+  //   // console.log('CP: ' + cp);
+  // },
+  // disconnect(client, dc) {
+  //   const cp = client.connectionParameters;
+  //   // console.log('Disconnecting from db: ' + cp.database);
+  // }
 }
 
-const pgp = require('pg-promise')(initOptions);
+const pgp = require('pg-promise')();
 
 const cn = {
   host: 'localhost',
