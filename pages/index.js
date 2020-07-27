@@ -157,7 +157,7 @@ export default function Home({ products }) {
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
           {'Carousel in dev while learning WP for you'}
           <section className={prodSecTwoStyles.ProdCarouselSec}>
-            <Carousel products={products} />
+            {/* <Carousel products={products} /> */}
           </section>
           <p>Built with <FavoriteIcon fontSize="small" /> using NextJS.</p>
         </article>
