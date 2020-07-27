@@ -27,11 +27,10 @@ import Square from '../components/Square';
 //
 // React Components
 import dynamic from 'next/dynamic'
-
+// import Carousel from '../components/Carousel';
 const Carousel = dynamic(import('../components/Carousel'), {
   ssr: false
 });
-// import Carousel from '../components/Carousel';
 //
 // NextJS
 import Head from 'next/head';
