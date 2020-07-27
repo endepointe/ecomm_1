@@ -26,7 +26,12 @@ import SideMenu from '../components/SideMenu';
 import Square from '../components/Square';
 //
 // React Components
-import Carousel from '../components/Carousel';
+import dynamic from 'next/dynamic'
+
+const Carousel = dynamic(import('../components/Carousel'), {
+  ssr: false
+});
+// import Carousel from '../components/Carousel';
 //
 // NextJS
 import Head from 'next/head';
