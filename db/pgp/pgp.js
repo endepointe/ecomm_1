@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const initOptions = {
   connect(client, dc, useCount) {
     const cp = client.connectionParameters;
@@ -21,7 +23,7 @@ const cn = {
   max: 2
 };
 
-// const db = pgp(cn);
-const db = pgp(`postgres://${cn.user}:${cn.password}@${cn.host}:${cn.port}/${cn.database}`);
+const db = pgp(cn);
+// const db = pgp(`postgres://${cn.user}:${cn.password}@${cn.host}:${cn.port}/${cn.database}`);
 
 module.exports = db;
