@@ -17,24 +17,39 @@
     width: 100%;
     margin-bottom: 5rem;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    /* flex-direction: row; */
+    /* justify-content: center; */
   }
 
   .Carousel {
     flex: 1;
-    display: flex;
-    justify-content: space-between;
+    overflow-x: hidden;
+    /* display: flex; */
   }
 
-  .CarouselBtn {
-    height: 4rem;
+  .Slider {
+    flex: 1;
+  }
+
+  .CarouselItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+  }
+
+  .CarouselBtnRight,
+  .CarouselBtnLeft {
+    height: 2.5rem;
+    flex: 0 0 2.5rem;
     align-self: center;
     background: none;
     border: none;
     outline: none;
   }
-  .CarouselBtn:hover {
+  .CarouselBtnLeft:hover,
+  .CarouselBtnRight:hover {
     cursor: pointer;
   }
 
