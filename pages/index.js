@@ -5,20 +5,16 @@ import mainStyles from '../styles/Main.module.css';
 import prodSecOneStyles from '../styles/ProdSecOne.module.css';
 import prodSecTwoStyles from '../styles/ProdSecTwo.module.css';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
-
 // Temp Icon for footer
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 //
-import { bool, number, string } from 'prop-types';
+import { bool } from 'prop-types';
 // Hooks
 import {
   useOnClickOutside,
   useWindowSizeX,
   useWindowSizeY,
-  ShowWindowDimensions,
 } from '../hooks/hooks';
 //
 // Nav Icons
@@ -176,11 +172,6 @@ Burger.propTypes = {
 
 SideMenu.propTypes = {
   open: bool.isRequired,
-}
-
-Square.propTypes = {
-  // width: string.isRequired,
-  // height: string.isRequired,
 }
 
 export async function getStaticProps() {
