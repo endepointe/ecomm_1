@@ -18,7 +18,7 @@ const cn = {
   database: 'clerk',
   user: process.env.PSQLUSER,
   password: process.env.PSQLPASS,
-  max: 1
+  max: 2
 };
 
 const db = pgp(cn);
