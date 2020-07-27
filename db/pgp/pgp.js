@@ -21,6 +21,7 @@ const cn = {
   max: 2
 };
 
-const db = pgp(cn);
+// const db = pgp(cn);
+const db = pgp(`postgres://${cn.user}:${cn.password}@${cn.host}:${cn.port}/${cn.database}`);
 
 module.exports = db;
