@@ -5,6 +5,9 @@ import mainStyles from '../styles/Main.module.css';
 import prodSecOneStyles from '../styles/ProdSecOne.module.css';
 import prodSecTwoStyles from '../styles/ProdSecTwo.module.css';
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css"
+
 // Temp Icon for footer
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
