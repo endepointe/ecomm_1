@@ -23,6 +23,7 @@ export default class Carousel extends Component {
       dots: false,
       infinite: true,
       speed: 500,
+      autoplay: true,
       slidesToShow: 2,
       slidesToScroll: 1
     };
