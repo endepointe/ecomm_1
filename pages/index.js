@@ -4,6 +4,7 @@ import headerStyles from '../styles/Header.module.css';
 import mainStyles from '../styles/Main.module.css';
 import prodSecOneStyles from '../styles/ProdSecOne.module.css';
 import prodSecTwoStyles from '../styles/ProdSecTwo.module.css';
+import prodSecThreeStyles from '../styles/ProdSecThree.module.css';
 
 // Temp Icon for footer
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -154,16 +155,31 @@ export default function Home({ products }) {
             </div>
           </section>
         </article>
-        <br />
-        <br />
+
         <article className={prodSecTwoStyles.Article}>
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
           {'Carousel in dev while learning WP for you'}
           <section className={prodSecTwoStyles.ProdCarouselSec}>
             <Carousel products={products} />
           </section>
-          <p>Built with <FavoriteIcon fontSize="small" /> using NextJS.</p>
         </article>
+
+        <article className={prodSecThreeStyles.Article}>
+          <div className={prodSecThreeStyles.H1s}>
+            <h1>Tell.</h1>
+            <h1>Your.</h1>
+            <h1>Story.</h1>
+          </div>
+
+          <p className={prodSecThreeStyles.P}>
+            Use this section to give a brief overview of how your business operates. Is your business built with sustainability in mind? Are you family owned? This is your chance to connect with your customers who share the same values.
+          </p>
+
+          <div className={prodSecThreeStyles.Button}>
+            <button>Learn more</button>
+          </div>
+        </article>
+        <p>Built with <FavoriteIcon fontSize="small" /> using NextJS.</p>
 
       </main>
     </div>

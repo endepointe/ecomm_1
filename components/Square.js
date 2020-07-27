@@ -5,7 +5,7 @@ const Square = styled.div`
   height: ${props => props.h}px;
 
   div {
-    width: 100%;
+    width: 0%;
     height: 100%;
     background-color: #CCC;
     position: relative; 
@@ -17,6 +17,7 @@ const Square = styled.div`
     overflow-x: hidden;
   }
   &:hover div {
+    width: 100%;
     transform: translateX(-100%);
   }
   overflow-x: hidden;

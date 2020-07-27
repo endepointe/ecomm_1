@@ -36,7 +36,7 @@ export default class Carousel extends Component {
             )}
           </Slider>
         </div>
-        <div style={{ textAlign: "center" }}>
+        <div className={prodSecTwoStyles.CarouselBtns}>
           <button
             className={prodSecTwoStyles.CarouselBtnRight}
             onClick={this.previous}>
