@@ -19,6 +19,8 @@
     margin-top: 2rem;
   }
   .P {
+    font-size: 1.1rem;
+    width: 90%;
   } 
 
   .Button > button {
@@ -27,15 +29,24 @@
     border-radius: 0.2rem;
     color: var(--title-light-color);
     outline: none;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 7.4rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    /* width: 7.4rem; */
     opacity: 1;
+    font-size: 1.2rem;
     font-weight: 500;
   }
   .Button > button:hover {
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.3s ease-in-out;
+  }
+}
+
+@media(min-width: 600px) {
+  .P {
+    width: 70%;
   }
 }

@@ -5,6 +5,7 @@ import mainStyles from '../styles/Main.module.css';
 import prodSecOneStyles from '../styles/ProdSecOne.module.css';
 import prodSecTwoStyles from '../styles/ProdSecTwo.module.css';
 import prodSecThreeStyles from '../styles/ProdSecThree.module.css';
+import prodSecFourStyles from '../styles/ProdSecFour.module.css';
 
 // Temp Icon for footer
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -29,7 +30,10 @@ import Square from '../components/Square';
 // React Components
 import dynamic from 'next/dynamic'
 // import Carousel from '../components/Carousel';
-const Carousel = dynamic(import('../components/Carousel'), {
+const ProductCarousel = dynamic(import('../components/ProductCarousel'), {
+  ssr: false
+});
+const MediaCarousel = dynamic(import('../components/MediaCarousel'), {
   ssr: false
 });
 //
@@ -160,7 +164,7 @@ export default function Home({ products }) {
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
           {'Carousel in dev while learning WP for you'}
           <section className={prodSecTwoStyles.ProdCarouselSec}>
-            <Carousel products={products} />
+            <ProductCarousel products={products} />
           </section>
         </article>
 
@@ -179,6 +183,12 @@ export default function Home({ products }) {
             <button>Learn more</button>
           </div>
         </article>
+
+        <article className={prodSecFourStyles.Article}>
+          <h1 className={prodSecFourStyles.H1}>Showcase your associations</h1>
+          <MediaCarousel />
+        </article>
+
         <p>Built with <FavoriteIcon fontSize="small" /> using NextJS.</p>
 
       </main>
