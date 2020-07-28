@@ -27,6 +27,7 @@ const SideMenu = styled.nav`
     color: white;
     text-decoration: none;
     transition: color 0.3s linear;
+    text-align: center;
     
     @media (max-width: 676px) {
       font-size: 1.5rem;
@@ -34,7 +35,8 @@ const SideMenu = styled.nav`
     }
 
     &:hover {
-      color: var(--shopnow-btn-color);
+      // color: var(--shopnow-btn-color);
+      color: #555;
     }
   }
 

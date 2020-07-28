@@ -79,9 +79,9 @@ export default function Home({ products }) {
         <div ref={node}>
           <SideMenu
             open={open}>
-            <Link href="/"><a aria-label="link">link</a></Link>
-            <Link href="/"><a aria-label="link">link</a></Link>
-            <Link href="/"><a aria-label="link">link</a></Link>
+            <Link href="/"><a aria-label="Shop">Shop</a></Link>
+            <Link href="/"><a aria-label="About Us">About Us</a></Link>
+            <Link href="/"><a aria-label="Blog">Blog</a></Link>
           </SideMenu>
           <Burger
             open={open}
