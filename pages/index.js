@@ -48,9 +48,20 @@ import {
   useState,
   useRef
 } from 'react';
-//
+
+// Shopify-Buy https://shopify.github.io/js-buy-sdk
+import Client from 'shopify-buy';
+const client = Client.buildClient({
+  domain: 'endepointe.myshopify.com',
+  storefrontAccessToken: process.env.STOREFRONTTOKEN,
+});
+
+import axios from 'axios';
+
 
 export default function Home({ products }) {
+
+  // console.log(shopifyStore);
 
   const node = useRef();
   const [open, setOpen] = useState(false);
@@ -162,7 +173,6 @@ export default function Home({ products }) {
 
         <article className={prodSecTwoStyles.Article}>
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
-          {'Carousel in dev while learning WP for you'}
           <section className={prodSecTwoStyles.ProdCarouselSec}>
             <ProductCarousel products={products} />
           </section>
@@ -185,7 +195,7 @@ export default function Home({ products }) {
         </article>
 
         <article className={prodSecFourStyles.Article}>
-          <h1 className={prodSecFourStyles.H1}>Showcase your associations</h1>
+          <h1 className={prodSecFourStyles.H1}>Showcase your inventory.</h1>
           <MediaCarousel />
         </article>
 
@@ -208,9 +218,25 @@ export async function getStaticProps() {
 
   const inventory = await db.manyOrNone('SELECT * FROM products;');
 
+  axios.get(`https://${process.env.SHOPIFY_STORE_API_KEY}:${process.env.SHOPIFY_STORE_PASSWORD}@${process.env.SHOPIFY_USERNAME}.myshopify.com/admin/api/2020-07/shop.json`).then((res) => {
+    console.log('res');
+  }).catch((err) => {
+    console.log(err);
+  });
+
+  let shopifyInventory;
+
+  client.product.fetchAll().then((products) => {
+    console.log(products[1].description);
+    // shopifyInventory = JSON.stringify(products);
+  }).catch((error) => {
+    console.log(error);
+  });
+
   return {
     props: {
       products: inventory,
+      // shopifyStore: shopifyInventory,
     }
   }
 }

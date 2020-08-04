@@ -3,7 +3,7 @@ import StarIcon from '@material-ui/icons/Star';
 
 export default function CarouselItem(props) {
 
-  console.log(props.product.item);
+  // console.log(props.product.item);
 
   return (
     <div>
