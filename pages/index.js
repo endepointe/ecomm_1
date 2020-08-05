@@ -52,16 +52,13 @@ import {
 // Shopify-Buy https://shopify.github.io/js-buy-sdk
 import Client from 'shopify-buy';
 const client = Client.buildClient({
-  domain: 'endepointe.myshopify.com',
+  domain: process.env.STOREURL,
   storefrontAccessToken: process.env.STOREFRONTTOKEN,
 });
 
 import axios from 'axios';
 
-
-export default function Home({ products }) {
-
-  // console.log(shopifyStore);
+export default function Home({ databaseProducts }) {
 
   const node = useRef();
   const [open, setOpen] = useState(false);
@@ -174,7 +171,7 @@ export default function Home({ products }) {
         <article className={prodSecTwoStyles.Article}>
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
           <section className={prodSecTwoStyles.ProdCarouselSec}>
-            <ProductCarousel products={products} />
+            <ProductCarousel products={databaseProducts} />
           </section>
         </article>
 
@@ -218,25 +215,21 @@ export async function getStaticProps() {
 
   const inventory = await db.manyOrNone('SELECT * FROM products;');
 
-  axios.get(`https://${process.env.SHOPIFY_STORE_API_KEY}:${process.env.SHOPIFY_STORE_PASSWORD}@${process.env.SHOPIFY_USERNAME}.myshopify.com/admin/api/2020-07/shop.json`).then((res) => {
-    console.log('res');
-  }).catch((err) => {
-    console.log(err);
-  });
-
-  let shopifyInventory;
-
   client.product.fetchAll().then((products) => {
-    console.log(products[1].description);
-    // shopifyInventory = JSON.stringify(products);
+    console.log(products[4].options);
   }).catch((error) => {
     console.log(error);
   });
 
+  axios.get(`https://${process.env.SHOPIFY_STORE_API_KEY}:${process.env.SHOPIFY_STORE_PASSWORD}@${process.env.SHOPIFY_USERNAME}.myshopify.com/admin/api/2020-07/shop.json`).then((res) => {
+    console.log(res.data);
+  }).catch((err) => {
+    console.log(err);
+  });
+
   return {
     props: {
-      products: inventory,
-      // shopifyStore: shopifyInventory,
+      databaseProducts: inventory,
     }
   }
 }
