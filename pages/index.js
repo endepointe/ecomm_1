@@ -7,6 +7,10 @@ import prodSecTwoStyles from '../styles/ProdSecTwo.module.css';
 import prodSecThreeStyles from '../styles/ProdSecThree.module.css';
 import prodSecFourStyles from '../styles/ProdSecFour.module.css';
 
+// lib
+import { fetchAPI } from '../lib/api';
+//
+
 // Temp Icon for footer
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
@@ -215,17 +219,20 @@ export async function getStaticProps() {
 
   const inventory = await db.manyOrNone('SELECT * FROM products;');
 
-  client.product.fetchAll().then((products) => {
-    console.log(products[4].options);
-  }).catch((error) => {
-    console.log(error);
-  });
+  const shopifyTest = await fetchAPI();
 
-  axios.get(`https://${process.env.SHOPIFY_STORE_API_KEY}:${process.env.SHOPIFY_STORE_PASSWORD}@${process.env.SHOPIFY_USERNAME}.myshopify.com/admin/api/2020-07/shop.json`).then((res) => {
-    console.log(res.data);
-  }).catch((err) => {
-    console.log(err);
-  });
+  console.log(shopifyTest);
+  // client.product.fetchAll().then((products) => {
+  //   console.log(products[4].options);
+  // }).catch((error) => {
+  //   console.log(error);
+  // });
+
+  // axios.get(`https://${process.env.SHOPIFY_STORE_API_KEY}:${process.env.SHOPIFY_STORE_PASSWORD}@${process.env.SHOPIFY_USERNAME}.myshopify.com/admin/api/2020-07/shop.json`).then((res) => {
+  //   console.log(res.data);
+  // }).catch((err) => {
+  //   console.log(err);
+  // });
 
   return {
     props: {
