@@ -9,6 +9,7 @@ export default class MediaCarousel extends Component {
     super(props);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
+    this.store = props.shopifyStore;
   }
   next() {
     this.slider.slickNext();
@@ -53,6 +54,16 @@ export default class MediaCarousel extends Component {
     };
     return (
       <div className={prodSecFourStyles.Carousel}>
+        <p>store stuff</p>
+        {this.store.map((item, i) => {
+          <div key={i}>
+            <p>{item.node.title}</p>
+            <img
+              src={item.node.images.edges[0].node.transformedSrc} alt="" />
+            <p>{item.node.description}</p>
+          </div>
+        })}
+
         <div className={prodSecFourStyles.Slider}>
           <Slider ref={c => (this.slider = c)} {...settings}>
             <div className={prodSecFourStyles.CarouselItem}>

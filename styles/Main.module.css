@@ -7,4 +7,10 @@
     padding: 0;
     flex-direction: column;
   }
+
+  .Store {
+    /* width: 400px; */
+    height: 400px;
+    margin: 0 auto;
+  }
 }

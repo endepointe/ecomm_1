@@ -62,9 +62,10 @@ const client = Client.buildClient({
 
 import axios from 'axios';
 
-export default function Home({ databaseProducts }) {
+export default function Home({ databaseProducts, shopifyStore }) {
 
   const node = useRef();
+  const [store, setStore] = useState([]);
   const [open, setOpen] = useState(false);
   const [dy, setWidth] = useState(useWindowSizeY());
   const [dx, setHeight] = useState(useWindowSizeX());
@@ -74,6 +75,9 @@ export default function Home({ databaseProducts }) {
   useEffect(() => {
     setWidth(window.innerWidth / 2);
     setHeight(window.innerWidth / 2);
+    // console.log(store["products"]);
+    setStore(shopifyStore["products"].edges);
+    console.log(store[0].node.title);
   });
 
   useOnClickOutside(node, () => setOpen(false));
@@ -197,12 +201,26 @@ export default function Home({ databaseProducts }) {
 
         <article className={prodSecFourStyles.Article}>
           <h1 className={prodSecFourStyles.H1}>Showcase your inventory.</h1>
-          <MediaCarousel />
+          <MediaCarousel shopifyStore={store} />
         </article>
+
+
 
         <p>Built with <FavoriteIcon fontSize="small" /> using NextJS.</p>
 
+        <div className={mainStyles.Store}>
+          {store.map((item, i) => {
+            <div key={i}>
+              <p>{item.node.title}</p>
+              <img
+                src={item.node.images.edges[0].node.transformedSrc} alt="" />
+              <p>{item.node.description}</p>
+            </div>
+          })}
+        </div>
+
       </main>
+
     </div>
   )
 }
@@ -219,9 +237,9 @@ export async function getStaticProps() {
 
   const inventory = await db.manyOrNone('SELECT * FROM products;');
 
-  const shopifyTest = await fetchAPI();
+  const shopifyInventory = await fetchAPI();
 
-  console.log(shopifyTest);
+  console.log(shopifyInventory);
   // client.product.fetchAll().then((products) => {
   //   console.log(products[4].options);
   // }).catch((error) => {
@@ -237,6 +255,7 @@ export async function getStaticProps() {
   return {
     props: {
       databaseProducts: inventory,
+      shopifyStore: shopifyInventory,
     }
   }
 }
