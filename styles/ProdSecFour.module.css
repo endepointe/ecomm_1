@@ -35,9 +35,9 @@
   }
 
   .CarouselItem {
-    width: 300px;
-    height: 300px;
-    background-image: url('https://via.placeholder.com/200x200');
+    max-width: 400px;
+    /* height: 300px; */
+    /* background-image: url('https://via.placeholder.com/200x200'); */
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -46,7 +46,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: -173px;
+    top: -253px;
   }
 
   .CarouselBtnRight,
@@ -56,11 +56,19 @@
     align-self: center;
     background: none;
     border: none;
+    border-radius: 1.25rem;
+    background: var(--shopnow-btn-color);
     outline: none;
+    opacity: 0.6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .CarouselBtnLeft:hover,
   .CarouselBtnRight:hover {
     cursor: pointer;
+    opacity: 0.8;
   }
 
 }

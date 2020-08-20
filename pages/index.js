@@ -60,8 +60,6 @@ const client = Client.buildClient({
   storefrontAccessToken: process.env.STOREFRONTTOKEN,
 });
 
-import axios from 'axios';
-
 export default function Home({ databaseProducts, shopifyStore }) {
 
   const node = useRef();
@@ -77,8 +75,8 @@ export default function Home({ databaseProducts, shopifyStore }) {
     setHeight(window.innerWidth / 2);
     // console.log(store["products"]);
     setStore(shopifyStore["products"].edges);
-    console.log(store[0].node.title);
-  });
+    // console.log(store);
+  }, [shopifyStore["products"].edges]);
 
   useOnClickOutside(node, () => setOpen(false));
   const toggleMenu = () => {
@@ -204,25 +202,18 @@ export default function Home({ databaseProducts, shopifyStore }) {
           <MediaCarousel shopifyStore={store} />
         </article>
 
-
-
         <p>Built with <FavoriteIcon fontSize="small" /> using NextJS.</p>
 
-        <div className={mainStyles.Store}>
-          {store.map((item, i) => {
-            <div key={i}>
-              <p>{item.node.title}</p>
-              <img
-                src={item.node.images.edges[0].node.transformedSrc} alt="" />
-              <p>{item.node.description}</p>
-            </div>
-          })}
-        </div>
+        {/* <div className={mainStyles.Store}>
+          <h4>{store[0].node.title}</h4>
+          <img src={store[0].node.images.edges[0].node.transformedSrc} alt="" />
+          <p>{store[0].node.description}</p>
+        </div> */}
 
       </main>
 
     </div>
-  )
+  );
 }
 
 Burger.propTypes = {
