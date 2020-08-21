@@ -1,4 +1,4 @@
-import db from '../db/pgp/pgp';
+// import db from '../db/pgp/pgp';
 import navStyles from '../styles/Nav.module.css';
 import headerStyles from '../styles/Header.module.css';
 import mainStyles from '../styles/Main.module.css';
@@ -60,7 +60,7 @@ const client = Client.buildClient({
   storefrontAccessToken: process.env.STOREFRONTTOKEN,
 });
 
-export default function Home({ databaseProducts, shopifyStore }) {
+export default function Home({ /*databaseProducts,*/ shopifyStore }) {
 
   const node = useRef();
   const [store, setStore] = useState([]);
@@ -177,7 +177,7 @@ export default function Home({ databaseProducts, shopifyStore }) {
         <article className={prodSecTwoStyles.Article}>
           <h1 className={prodSecTwoStyles.H1}>Top Sellers</h1>
           <section className={prodSecTwoStyles.ProdCarouselSec}>
-            <ProductCarousel products={databaseProducts} />
+            <ProductCarousel /*products={databaseProducts}*/ />
           </section>
         </article>
 
@@ -226,7 +226,7 @@ SideMenu.propTypes = {
 
 export async function getStaticProps() {
 
-  const inventory = await db.manyOrNone('SELECT * FROM products;');
+  // const inventory = await db.manyOrNone('SELECT * FROM products;');
 
   const shopifyInventory = await fetchAPI();
 
@@ -245,7 +245,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      databaseProducts: inventory,
+      // databaseProducts: inventory,
       shopifyStore: shopifyInventory,
     }
   }
