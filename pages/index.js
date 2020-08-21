@@ -198,7 +198,7 @@ export default function Home({ /*databaseProducts,*/ shopifyStore }) {
         </article>
 
         <article className={prodSecFourStyles.Article}>
-          <h1 className={prodSecFourStyles.H1}>Showcase your inventory.</h1>
+          <h1 className={prodSecFourStyles.H1}>Showcase your Shopify Inventory.</h1>
           <MediaCarousel shopifyStore={store} />
         </article>
 
