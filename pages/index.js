@@ -245,7 +245,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      // databaseProducts: inventory,
+      databaseProducts: inventory,
       shopifyStore: shopifyInventory,
     }
   }
