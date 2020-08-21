@@ -226,7 +226,7 @@ SideMenu.propTypes = {
 
 export async function getStaticProps() {
 
-  // const inventory = await db.manyOrNone('SELECT * FROM products;');
+  const inventory = await db.manyOrNone('SELECT * FROM products;');
 
   const shopifyInventory = await fetchAPI();
 
