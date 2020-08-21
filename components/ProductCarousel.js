@@ -57,9 +57,9 @@ export default class MediaCarousel extends Component {
       <div className={prodSecTwoStyles.Carousel}>
         <div className={prodSecTwoStyles.Slider}>
           <Slider ref={c => (this.slider = c)} {...settings}>
-            {/* {Object.values(this.products).map((product, i) =>
+            {Object.values(this.products).map((product, i) =>
               <CarouselItem key={i} product={product} />
-            )} */}
+            )}
           </Slider>
         </div>
         <div className={prodSecTwoStyles.CarouselBtns}>
